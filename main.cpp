@@ -1,45 +1,31 @@
 #include <iostream>
-#include <vector>
+#include <string>
 
 using namespace std;
 
+// 1. Function to greet the user
+void greetUser(string name) {
+    cout << "Congratulations " << name << "!" << endl;
+}
+
+// 2. Function to add 4 float numbers
+float addFourFloats(float a, float b, float c, float d) {
+    return a + b + c + d;
+}
+
+// 3. Recursive function for Fibonacci
+int fibonacci(int n) {
+    if (n <= 1)
+        return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
 int main() {
-    // 1. Variable to store the chosen number
-    int chosenNumber = 7;
-    
-    // 2. Variable to store the user's input
-    int userGuess = 0;
-    
-    // 3. Array (list) to keep all the numbers entered by the user
-    vector<int> attempts;
-
-    cout << "--- Game: Guess the Number ---" << endl;
-
-    // 4. While loop that continues as long as the user's guess is not equal to the chosen number
-    while (userGuess != chosenNumber) {
-        cout << "Enter your guess: ";
-        cin >> userGuess;
-
-        // 5. Immediately save the value into the array/list
-        attempts.push_back(userGuess);
-
-        // 6. If / else statements to compare the guess
-        if (userGuess > chosenNumber) {
-            cout << "Too high" << endl;
-        } 
-        else if (userGuess < chosenNumber) {
-            cout << "Too low" << endl;
-        } 
-        else {
-            cout << "Correct" << endl;
-        }
-    }
-
-    // 7. For loop to display all guesses stored in the array
-    cout << "\nAll your guesses:" << endl;
-    for (int i = 0; i < attempts.size(); i++) {
-        cout << attempts[i] << endl;
-    }
+    // Example for Task 1
+    string userName;
+    cout << "Enter your name: ";
+    getline(cin, userName);
+    greetUser(userName);
 
     return 0;
 }
